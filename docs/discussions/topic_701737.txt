@@ -1,0 +1,14 @@
+Topic #701737: [SOLVED] Currently local environment doesn't match environment on kaggle, so its impossible to test agents
+  Author: lucian kucera
+  Posted: 2026-05-19 08:29:06.432000
+  Votes: 0  Comments: 3
+
+As mentioned in title please fix.
+
+Comments:
+├─ Bovard Doerschuk-Tiberi (2026-05-19 16:27:00.760000) [+0]
+│  1.29.3 should have all the changes
+  ├─ lucian kucera (2026-05-19 16:34:16.193000) [+0]
+  │  Can you checkout my post about scrolling. I have also posted an issue on github. Currently I think scrolling is way to fast and supresses any strategy: that isnt just move forward without any energ...
+  ├─ lucian kucera (2026-05-19 16:45:30.573000) [+0]
+  │  thank u i have noticed u have decresed scrolling.

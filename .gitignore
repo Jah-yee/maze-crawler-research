@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/raw/*.zip
+external/
+reports/
+data/
+baselines/
+submissions/
+working/
+notebooks/

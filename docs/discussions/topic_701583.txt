@@ -1,0 +1,36 @@
+Topic #701583: Competition Updates
+  Author: Bovard Doerschuk-Tiberi
+  Posted: 2026-05-18 23:01:23.272000
+  Votes: 0  Comments: 6
+
+TIE was showing up for matches where an agent won on tie breakers, this has been fixed
+
+all units were incorrectly moving every turn. Fixed so only scounts can move once/turn, every other unit now moves once every other turn
+
+added a BUILD_UNIT_DIR (BUILD_SCOUNT_SOUTH) command, default to north if not added
+
+maze initial crawl speed now set to 10, maxes at a 2 at turn 450
+
+Comments:
+├─ Davide Stenner (2026-05-19 07:39:15.037000) [+1]
+│  @bovard  i can't see any fix about what you mentioned.
+│  
+│  i'm running:
+│  
+│  from kaggle_environments import make
+│  
+│  env = make("crawl", configuration={"randomSeed": 42}, debug=True)
+│  print("Environment read...
+  ├─ Bovard Doerschuk-Tiberi (2026-05-19 16:27:54.903000) [+1]
+  │  1.29.3 is currently being pushed, it should have all the changes!
+├─ yamanoue_sinbee (2026-05-19 05:16:31.890000) [+2]
+│  Thank you for the update.
+│  With the reduced speed of Factories and other units, it seems that advancing the Factory has become even more essential. Even before the update, the “Factory solo + Alpha”...
+├─ bunterrrrr (2026-05-22 02:28:41.790000) [+0]
+│  Hi @bovard,
+│  
+│  I think there still might be an issue with tie breakers. I’ve noticed in replays that when two factories collide it is always called a tie regardless of which player has the most energ...
+  ├─ lucian kucera (2026-05-22 07:59:37.673000) [+0]
+  │  The reason is i guess that energy that factory has doesn't count, because its destroyed.
+├─ lucian kucera (2026-05-19 08:24:39.880000) [+0]
+│  The problem is scroll speed it should quater of current value to promote actual complex strategies. The scroll speed was bad before update as i have mentioned, but now it renders any strategy usles...

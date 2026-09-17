@@ -1,0 +1,6 @@
+{
+  "final_kick_gap": 3,
+  "final_kick_turn": 380,
+  "gate_miner": true,
+  "gate_scout": true
+}

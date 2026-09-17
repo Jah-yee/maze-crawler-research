@@ -1,0 +1,115 @@
+Topic #702108: [Sharing] Jump-Preferred BFS (LB 1223)
+  Author: Nicolas Bridelance
+  Posted: 2026-05-21 09:41:51.232000
+  Votes: 2  Comments: 0
+
+Top 2 Solution Sharing: Jump-Preferred BFS (LB 1223)
+
+Hi everyone!
+
+I've been sitting at #1-5 on the leaderboard for the past week and wanted to share my full approach. The notebook with complete runnable code is here: https://www.kaggle.com/code/nbridelancetb/top-2-maze-crawler-jump-preferred-bfs-lb-1223
+
+TL;DR
+
+Pure rule-based agent, ~370 lines of Python. No ML, no MCTS, no neural nets. The core insight: this game is entirely about factory pathfinding speed.
+
+Key Findings from Replay Analysis
+
+I analyzed 29 replays of top players and found:
+
+
+
+Zero top players build workers, miners, or do any mining
+
+Winners move their factory every single turn (0 IDLE)
+
+The only unit worth building is 1 scout for cheap vision
+
+Factory gets 30-55 SOUTH moves and 8-17 jumps per 500-step game
+
+
+The 3 Techniques That Matter
+
+1. Jump-Preferred BFS
+
+Factory jumps cover 2 cells in 1 turn. Normal walking = 1 cell per 2 turns (move_period=2). So a jump is ~4x more efficient. My BFS explores jump moves before walk moves when the cooldown is ready, making the factory actively seek paths that use jumps.
+
+2. Mirror Vision
+
+The maze has E/W symmetry. Every wall I observe on column c, I can infer the mirrored wall on column width-1-c. This doubles explored area instantly and makes BFS much more accurate through fog.
+
+3. Optimistic Fog Treatment
+
+Unknown cells are treated as passable (wall bits = 0). This means BFS will route through fog optimistically rather than being scared of unexplored areas. Combined with the scout running ahead, this works remarkably well.
+
+What Didn't Work (13 Variants Tested)
+
+
+
+
+Approach
+Win% vs baseline
+Verdict
+
+
+
+
+Building workers proactively
+18%
+Terrible
+
+
+Walk-first BFS (no jump preference)
+32%
+Bad
+
+
+Pure factory (no scout at all)
+32%
+Bad
+
+
+Crystal-routing BFS
+26%
+Terrible
+
+
+Economy (miners + transfers)
+36%
+Bad
+
+
+Force-jumping aggressively
+24%
+Terrible
+
+
+Multiple scouts
+32%
+Bad
+
+
+
+
+Every turn spent NOT moving the factory north is a turn closer to death.
+
+Room for Improvement
+
+The current #1 (1539 ELO, +315 above me) clearly has something better. My guesses:
+
+
+
+More sophisticated pathfinding (A* with northward heuristic?)
+
+Better jump timing optimization
+
+Lookahead that accounts for scroll speed ramping
+
+
+Code
+
+Full notebook: https://www.kaggle.com/code/nbridelancetb/top-2-maze-crawler-jump-preferred-bfs-lb-1223
+
+Good luck and happy crawling!
+
+No comments

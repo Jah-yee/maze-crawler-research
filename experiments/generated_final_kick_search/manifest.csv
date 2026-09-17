@@ -1,0 +1,5 @@
+name,agent,final_kick_turn,final_kick_gap,gate_miner,gate_scout
+fk_t360_g3_both,$HOME/Desktop/kagglecraw/experiments/generated_final_kick_search/fk_t360_g3_both/main.py,360,3,True,True
+fk_t380_g3_both,$HOME/Desktop/kagglecraw/experiments/generated_final_kick_search/fk_t380_g3_both/main.py,380,3,True,True
+fk_t400_g3_both,$HOME/Desktop/kagglecraw/experiments/generated_final_kick_search/fk_t400_g3_both/main.py,400,3,True,True
+fk_t420_g3_both,$HOME/Desktop/kagglecraw/experiments/generated_final_kick_search/fk_t420_g3_both/main.py,420,3,True,True
