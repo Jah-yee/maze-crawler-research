@@ -9,12 +9,21 @@ cached third-party baselines. The root baseline was originally derived from the
 public Kaggle notebook credited in `docs/research.md`; subsequent variants and
 analysis are preserved here with that provenance visible.
 
+## Publication status
+
+This repository is public for research inspection and reproducibility. It is a
+sanitized research archive, not yet a uniformly licensed software package.
+The baseline provenance above is why no blanket open-source license is asserted
+over files whose authorship or upstream license has not been verified.
+
 ## Setup
 
-The Kaggle CLI and local dependencies are installed in `.venv`.
+Create a local virtual environment and install the Kaggle CLI plus the
+dependencies needed by the script you plan to run. The original `.venv` is
+intentionally excluded from this archive.
 
 ```bash
-source .venv/bin/activate
+.venv/bin/python -m pip install kaggle
 kaggle competitions list --search maze-crawler
 ```
 
@@ -28,6 +37,9 @@ kaggle competitions list --search maze-crawler
 - Current experimental late-game patch: `experiments/v33_targeted_late_patch/main.py` (kept as a research branch, not promoted)
 
 See `docs/research.md` for rule notes, leaderboard snapshot, local evaluation, and improvement plan.
+
+The historical scores above are workspace records, not claims about the current
+competition leaderboard.
 
 ## Evaluate Locally
 
@@ -49,3 +61,6 @@ If Kaggle API has transient SSL failures, use:
 ```bash
 scripts/submit_with_retry.sh
 ```
+
+Eligible sanitized artifacts are also backed up in the private
+[Kaggle archive](https://www.kaggle.com/datasets/jahyee/maze-crawler-research-archive).
